@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "568430307696",
+    "firebase_url": "https://studentlearningassistant-fffc0.firebaseio.com",
+    "project_id": "studentlearningassistant-fffc0",
+    "storage_bucket": "studentlearningassistant-fffc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568430307696:android:5ce0318106b23dc941c7b5",
+        "android_client_info": {
+          "package_name": "edu.utep.cs.cs4330.sla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568430307696-kmugq88hi8ankls53250rcv6b62hb993.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.utep.cs.cs4330.sla",
+            "certificate_hash": "8cf0395045a963100a3c1eccffe8432c87d80fcd"
+          }
+        },
+        {
+          "client_id": "568430307696-4j5lj7timo1uibffkfdi3g23ek7tmkt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNcECV6jBY8doO9E1M60BbEPOpRTGESkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568430307696-4j5lj7timo1uibffkfdi3g23ek7tmkt4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
