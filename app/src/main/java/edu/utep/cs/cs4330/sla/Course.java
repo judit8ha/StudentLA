@@ -7,7 +7,7 @@ public class Course {
     private int period;
     private List<String> tools;
     private String homework;
-    private Instructor instructor;
+    private String instructor;
 
 
     public Course(String courseName) {
@@ -46,11 +46,11 @@ public class Course {
         this.homework = homework;
     }
 
-    public Instructor getInstructor() {
+    public String getInstructor() {
         return instructor;
     }
 
-    public void setInstructor(Instructor instructor) {
+    public void setInstructor(String instructor) {
         this.instructor = instructor;
     }
 }

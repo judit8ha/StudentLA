@@ -1,10 +1,13 @@
 package edu.utep.cs.cs4330.sla;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     public String name;
     public String email;
     public int id;
-    public Course[] courses = new Course[8];
+    public List<Course> courses = new ArrayList<Course>();
 
     public User() {
     }
@@ -39,11 +42,11 @@ public class User {
         this.email = email;
     }
 
-    public Course[] getCourses() {
-        return courses;
+    public ArrayList<Course> getCourses() {
+        return (ArrayList<Course>) courses;
     }
 
-    public void setCourses(Course[] courses) {
-        this.courses = courses;
+    public void setCourse(Course course) {
+        courses.add(course);
     }
 }

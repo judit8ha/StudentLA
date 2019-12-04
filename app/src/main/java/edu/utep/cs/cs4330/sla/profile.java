@@ -12,6 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
@@ -20,8 +21,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -37,17 +43,23 @@ public class profile extends AppCompatActivity {
     private DatabaseReference myRef;
     private String userID;
     String currentDate;
-    List<Course> courseList;
+    List<Course> courseList = new ArrayList<Course>();
+    ItemAdapter itemAdapter;
+
+
 
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.content_profile);
+        //courseList.add(new Course("Art"));
 
         greetingText = findViewById(R.id.greetingText);
         date = findViewById(R.id.dateText);
+        //courseList = new ArrayList<Course>();
+
         currentDate = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault()).format(new Date());
         //
         date.setText(currentDate);
@@ -58,6 +70,11 @@ public class profile extends AppCompatActivity {
         final FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
         Log.d("onCreate ", "User ID set " + userID);
+        Course math = new Course("Math");
+        math.setPeriod(2);
+        math.setHomework("no hw ");
+        math.setInstructor("Mr Flores");
+        courseList.add(math);
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -85,17 +102,58 @@ public class profile extends AppCompatActivity {
                 userName = u.getName();
                 myUser.name = userName;
                 greetingText.setText("Hello " + myUser.getName() + "!");
+                Course english = new Course("English");
+
+                english.setPeriod(Integer.parseInt(
+                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("English")
+                                .child("period").getValue()).toString()
+                ));
+                english.setInstructor(
+                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("English")
+                                .child("instructor").getValue()).toString()
+                );
+                english.setHomework(
+                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("English")
+                                .child("homework").getValue()).toString()
+                );
+                myUser.setCourse(english);
+                addCourse(english);
+
+//                english.setTools(
+//                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("English")
+//                                .child("period").getValue()).toString()
+//                );
+                Course math = new Course("Math");
+
+                math.setPeriod(Integer.parseInt(
+                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("Math")
+                                .child("period").getValue()).toString()
+                ));
+                math.setInstructor(
+                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("Math")
+                                .child("instructor").getValue()).toString()
+                );
+                math.setHomework(
+                        Objects.requireNonNull(dataSnapshot.child(userID).child("classes").child("Math")
+                                .child("homework").getValue()).toString()
+                );
+                Log.d("COURSES","math hw: " + math.getHomework());
+
+                myUser.setCourse(math);
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+        //courseList = myUser.getCourses();
+        Log.d("courselist", "size "+ courseList.size());
 
-        courseList = dbHandler.allItems();
 
-        itemAdapter = new ItemAdapter(this, 0, itemList);
+        itemAdapter = new ItemAdapter(this, 0, courseList);
 
         ListView listView = (ListView) findViewById(R.id.names_list_view);
+//       // Log.d("LISTVIEW", ListView.)
         listView.setAdapter(itemAdapter);
 
 
@@ -103,17 +161,9 @@ public class profile extends AppCompatActivity {
     }
 
 
-
-//    private void loadStudent(){
-//        User alec = new User();
-//        alec.setName("Alec");
-//        alec.setEmail("alec@aol.com");
-//
-//        User abbie = new User();
-//        abbie.setName("Abbie");
-//        abbie.setEmail("abbie@aol.com");
-//
-//    }
+    private void addCourse(Course c){
+        courseList.add(c);
+    }
     private void showData(DataSnapshot dataSnapshot){
         Log.d("show Data ", "Show data method");
         for (DataSnapshot ds: dataSnapshot.getChildren()) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_profile"
     android:layout_width="match_parent"
@@ -15,23 +16,46 @@
         android:layout_width="395dp"
         android:layout_height="388dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
+        android:layout_marginTop="246dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/colorPrimaryDark" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="398dp"
-        android:layout_height="234dp"
-        android:layout_above="@+id/names_list_view"
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="331dp"
+        android:layout_height="73dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="-3dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="13dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="529dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Hello Student!"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="374dp"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="447dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Month dd yyyy"
+        android:textSize="30sp" />
 </RelativeLayout>
 
 <!--<?xml version="1.0" encoding="utf-8"?>-->

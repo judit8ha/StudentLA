@@ -7,46 +7,40 @@
 
     <TextView
         android:id="@+id/instructorDisplay"
-        android:layout_width="335dp"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/nameDisplay"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="473dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:layout_toStartOf="@+id/imageButton"
         android:text="Teacher"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/nameDisplay"
-        android:layout_width="335dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_below="@+id/periodDisplay"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="72dp"
-        android:layout_marginBottom="514dp"
         android:text="Class Name"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/periodDisplay"
-        android:layout_width="285dp"
-        android:layout_height="41dp"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="548dp"
+        android:layout_marginEnd="133dp"
+        android:layout_toStartOf="@+id/alertButton"
         android:text="Period"
         android:textSize="25sp" />
 
@@ -54,28 +48,20 @@
         android:id="@+id/alertButton"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="361dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="671dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
         app:srcCompat="@android:drawable/ic_dialog_alert" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="366dp"
         android:layout_marginTop="87dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="578dp"
         app:srcCompat="@android:drawable/sym_action_chat" />
 
 
