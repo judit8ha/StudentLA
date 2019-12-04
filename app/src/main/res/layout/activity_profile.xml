@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/greetingText"
-        android:layout_width="298dp"
-        android:layout_height="82dp"
+        android:layout_width="237dp"
+        android:layout_height="83dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Hello Student!"
         android:textSize="36sp"
@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/dateText"
-        android:layout_width="222dp"
-        android:layout_height="45dp"
+        android:layout_width="327dp"
+        android:layout_height="63dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Month dd yyyy"
         android:textSize="30sp"

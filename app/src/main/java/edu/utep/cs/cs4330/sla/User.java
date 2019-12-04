@@ -1,12 +1,17 @@
 package edu.utep.cs.cs4330.sla;
 
-public class Student {
-    private String name;
-    private String email;
-    private int id;
-    private Course[] courses = new Course[8];
+public class User {
+    public String name;
+    public String email;
+    public int id;
+    public Course[] courses = new Course[8];
 
-    public Student() {
+    public User() {
+    }
+
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
     public int getId() {
@@ -17,10 +22,6 @@ public class Student {
         this.id = id;
     }
 
-    public Student(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
 
     public String getName() {
         return name;
